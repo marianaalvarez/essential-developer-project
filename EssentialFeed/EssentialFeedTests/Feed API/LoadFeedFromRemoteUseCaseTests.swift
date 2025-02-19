@@ -80,14 +80,14 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         
         let item1 = makeItem(
             id: UUID(),
-            imageURL: URL(string: "https://a-url.com")!
+            url: URL(string: "https://a-url.com")!
         )
         
         let item2 = makeItem(
             id: UUID(),
             description: "a description",
             location: "a location",
-            imageURL: URL(string: "https://a-another-url.com")!
+            url: URL(string: "https://a-another-url.com")!
         )
         
         let items = [item1.model, item2.model]
@@ -126,19 +126,19 @@ class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         return .failure(error)
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
-        let item = FeedItem(
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, url: URL) -> (model: FeedImage, json: [String: Any]) {
+        let item = FeedImage(
             id: id,
             description: description,
             location: location,
-            imageURL: imageURL
+            url: url
         )
         
         let json = [
             "id": id.uuidString,
             "description": description,
             "location": location,
-            "image": imageURL.absoluteString
+            "image": url.absoluteString
         ].compactMapValues { $0 }
         
         return (item, json)
