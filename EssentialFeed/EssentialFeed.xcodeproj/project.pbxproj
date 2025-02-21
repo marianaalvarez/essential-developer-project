@@ -25,6 +25,7 @@
 		EA3F9DD62D666B8500FF73DF /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F9DD52D666B8500FF73DF /* LocalFeedImage.swift */; };
 		EA3F9DD82D667F9600FF73DF /* LoadFeedFromCacheUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F9DD72D667F9600FF73DF /* LoadFeedFromCacheUseCaseTest.swift */; };
 		EA3F9DDB2D66817600FF73DF /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F9DDA2D66817600FF73DF /* FeedStoreSpy.swift */; };
+		EA3F9DDF2D692AAF00FF73DF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F9DDE2D692AAF00FF73DF /* ValidateFeedCacheUseCaseTests.swift */; };
 		EAA3FE8D2D15EB5A0036CB5A /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3FE8C2D15EB5A0036CB5A /* RemoteFeedLoader.swift */; };
 		EAB8273C2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8273B2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		EA3F9DD52D666B8500FF73DF /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		EA3F9DD72D667F9600FF73DF /* LoadFeedFromCacheUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTest.swift; sourceTree = "<group>"; };
 		EA3F9DDA2D66817600FF73DF /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
+		EA3F9DDE2D692AAF00FF73DF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		EAA3FE8C2D15EB5A0036CB5A /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		EAB8273B2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +184,7 @@
 				EA3F9DD92D66816100FF73DF /* Helpers */,
 				EA3F9DCC2D64FCE200FF73DF /* CacheFeedUseCaseTests.swift */,
 				EA3F9DD72D667F9600FF73DF /* LoadFeedFromCacheUseCaseTest.swift */,
+				EA3F9DDE2D692AAF00FF73DF /* ValidateFeedCacheUseCaseTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3F9DDF2D692AAF00FF73DF /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				EA05534D2D31A6C400566946 /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */,
 				EAB8273C2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				EA3F9DDB2D66817600FF73DF /* FeedStoreSpy.swift in Sources */,
