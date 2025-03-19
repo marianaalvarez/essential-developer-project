@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FeedStoreTests {
+protocol FeedStoreSpecs {
     func test_retrieve_deliversEmptyOnEmptyCache()
     func test_retrieve_hasNoSideEffectOnEmptyCache()
     func test_retrieve_deliversFoundValuesOnNonEmptyCache()
@@ -21,17 +21,17 @@ protocol FeedStoreTests {
     func test_storeSideEffects_runSerially()
 }
 
-protocol FailableRetrieveFeedStoreSpecs: FeedStoreTests {
+protocol FailableRetrieveFeedStoreSpecs: FeedStoreSpecs {
     func test_retrieve_deliversFailureOnRetrievalError()
     func test_retrieve_hasNoSideEffetcsOnFailure()
 }
 
-protocol FailableInsertFeedStoreSpecs: FeedStoreTests {
+protocol FailableInsertFeedStoreSpecs: FeedStoreSpecs {
     func test_insert_deliversErrorOnInsertionError()
     func test_insert_hasNoSideEffectsOnInsertionError()
 }
 
-protocol FailableDeleteFeedStoreSpecs: FeedStoreTests {
+protocol FailableDeleteFeedStoreSpecs: FeedStoreSpecs {
     func test_delete_deliversErrorOnDeletionError()
     func test_delete_hasNoSideEffectOnDeletionError()
 }
