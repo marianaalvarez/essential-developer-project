@@ -45,7 +45,7 @@ public final class CoreDataFeedStore: FeedStore {
             do {
                 let managedCache = ManagedCache(context: context)
                 managedCache.timestamp = timestamp
-                managedCache.feed = NSOrderedSet(array: feed.map { local in
+                managedCache.feed = NSSet(array: feed.map { local in
                     let managed = ManagedFeedImage(context: context)
                     managed.id = local.id
                     managed.imageDescription = local.description
@@ -102,7 +102,7 @@ private extension NSManagedObjectModel {
 @objc(ManagedCache)
 private class ManagedCache: NSManagedObject {
     @NSManaged var timestamp: Date
-    @NSManaged var feed: NSOrderedSet
+    @NSManaged var feed: NSSet
 }
 
 @objc(ManagedFeedImage)
