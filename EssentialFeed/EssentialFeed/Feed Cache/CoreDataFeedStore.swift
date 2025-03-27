@@ -87,13 +87,13 @@ private extension NSManagedObjectModel {
 @objc(ManagedCache)
 private class ManagedCache: NSManagedObject {
     @NSManaged var timestamp: Date
-    @NSManaged var feed: NSSet
+    @NSManaged var feed: NSOrderedSet
     
     static func find(in context: NSManagedObjectContext) throws -> ManagedCache? {
-            let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
-            request.returnsObjectsAsFaults = false
-            return try context.fetch(request).first
-        }
+        let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
+        request.returnsObjectsAsFaults = false
+        return try context.fetch(request).first
+    }
     
     var localFeed: [LocalFeedImage] {
         return feed.compactMap { ($0 as? ManagedFeedImage)?.local }
@@ -108,8 +108,8 @@ private class ManagedFeedImage: NSManagedObject {
     @NSManaged var url: URL
     @NSManaged var cache: ManagedCache
     
-    static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSSet {
-        return NSSet(array: localFeed.map { local in
+    static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
+        return NSOrderedSet(array: localFeed.map { local in
             let managed = ManagedFeedImage(context: context)
             managed.id = local.id
             managed.imageDescription = local.description
