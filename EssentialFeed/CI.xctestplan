@@ -24,8 +24,8 @@
     {
       "target" : {
         "containerPath" : "container:EssentialFeed.xcodeproj",
-        "identifier" : "EA0553532D35D3C100566946",
-        "name" : "EssentialFeedAPIEndToEndTests"
+        "identifier" : "EA69986B2D9886490051699D",
+        "name" : "EssentialFeedCacheIntegrationTests"
       }
     },
     {
@@ -33,6 +33,13 @@
         "containerPath" : "container:EssentialFeed.xcodeproj",
         "identifier" : "080EDEF921B6DA7E00813479",
         "name" : "EssentialFeedTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "EA0553532D35D3C100566946",
+        "name" : "EssentialFeedAPIEndToEndTests"
       }
     }
   ],
