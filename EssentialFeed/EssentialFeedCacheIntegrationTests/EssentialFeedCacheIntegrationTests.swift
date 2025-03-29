@@ -10,6 +10,18 @@ import EssentialFeed
 
 class EssentialFeedCacheIntegrationTests: XCTestCase {
     
+    override func setUp() {
+        super.setUp()
+        
+        setupEmptyStoreState()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        
+        undoStoreSideEffects()
+    }
+    
     func test_load_deliversNoItemsOnEmptyCache() {
         let sut = makeSUT()
         
@@ -26,6 +38,31 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 0.1)
+    }
+    
+    func test_load_deliversItemsSavedOnASeparateInstance() {
+        let sutToPerformSave = makeSUT()
+        let sutToPerformLoad = makeSUT()
+        let feed = uniqueImageFeed().models
+        
+        let saveExp = expectation(description: "Wait for save")
+        sutToPerformSave.save(feed) { saveError in
+            XCTAssertNil(saveError, "Expected to save successfully")
+            saveExp.fulfill()
+        }
+        wait(for: [saveExp], timeout: 0.1)
+        
+        let loadExp = expectation(description: "Wait for load")
+        sutToPerformLoad.load { result in
+            switch result {
+            case .success(let imageFeed):
+                XCTAssertEqual(imageFeed, feed)
+            case .failure(let error):
+                XCTFail("Expected successful feed result, got \(error) instead")
+            }
+            loadExp.fulfill()
+        }
+        wait(for: [loadExp], timeout: 0.1)
     }
     
     // MARK: - Helpers
@@ -46,5 +83,17 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     
     private func cachesDirectory() -> URL {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+    }
+    
+    private func setupEmptyStoreState() {
+        deleteStoreArtifacts()
+    }
+    
+    private func undoStoreSideEffects() {
+        deleteStoreArtifacts()
+    }
+    
+    private func deleteStoreArtifacts() {
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 }
