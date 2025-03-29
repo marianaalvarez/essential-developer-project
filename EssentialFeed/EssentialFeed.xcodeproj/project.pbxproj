@@ -44,6 +44,7 @@
 		EA6998652D961F900051699D /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6998642D961F900051699D /* ManagedFeedImage.swift */; };
 		EA6998672D961F9F0051699D /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6998662D961F9F0051699D /* ManagedCache.swift */; };
 		EA6998702D9886490051699D /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; };
+		EA6998782D9889560051699D /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05534C2D31A6C400566946 /* XCTestCaseMemoryLeakTrackingHelper.swift */; };
 		EAA3FE8D2D15EB5A0036CB5A /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3FE8C2D15EB5A0036CB5A /* RemoteFeedLoader.swift */; };
 		EAB8273C2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB8273B2D10C552001A27CC /* LoadFeedFromRemoteUseCaseTests.swift */; };
 /* End PBXBuildFile section */
@@ -117,17 +118,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EA6998772D9887910051699D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		EA69987E2D988D5C0051699D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				EssentialFeedCacheIntegrationTests.xctestplan,
+				EssentialFeedCacheIntegrationTests.swift,
 			);
 			target = EA69986B2D9886490051699D /* EssentialFeedCacheIntegrationTests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EA69986D2D9886490051699D /* EssentialFeedCacheIntegrationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (EA6998772D9887910051699D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedCacheIntegrationTests; sourceTree = "<group>"; };
+		EA69986D2D9886490051699D /* EssentialFeedCacheIntegrationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (EA69987E2D988D5C0051699D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedCacheIntegrationTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,9 +414,6 @@
 			dependencies = (
 				EA6998722D9886490051699D /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				EA69986D2D9886490051699D /* EssentialFeedCacheIntegrationTests */,
-			);
 			name = EssentialFeedCacheIntegrationTests;
 			packageProductDependencies = (
 			);
@@ -564,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6998782D9889560051699D /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
